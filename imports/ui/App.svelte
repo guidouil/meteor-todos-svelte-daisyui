@@ -2,6 +2,7 @@
   import { Meteor } from "meteor/meteor";
   import { TasksCollection } from "../db/TasksCollection";
   import NavBar from "./NavBar.svelte";
+  import Footer from "./Footer.svelte";
   import Task from "./Task.svelte";
   import TaskForm from "./TaskForm.svelte";
   import LoginForm from "./LoginForm.svelte";
@@ -39,24 +40,23 @@
   };
 </script>
 
-<main>
-  <NavBar {pendingTasksTitle} {user} />
+<NavBar {pendingTasksTitle} {user} />
+<main class="min-h-screen">
   <div class="max-w-sm md:max-w-lg mx-auto px-8">
     {#if user}
       {#if isLoading}
         <div class="loading">loading...</div>
       {/if}
       <TaskForm />
-      <p class="text-center">
-        <br />
+      <div class="text-center my-4">
         <button
           class="btn btn-secondary"
           on:click={() => setHideCompleted(!hideCompleted)}
         >
           {hideCompleted ? "Show All" : "Hide Completed"}
         </button>
-      </p>
-      <div class="divider" />
+      </div>
+
       <ul>
         {#each tasks as task (task._id)}
           <Task {task} />
@@ -67,6 +67,7 @@
     {/if}
   </div>
 </main>
+<Footer />
 
 <style global>
   @tailwind base;

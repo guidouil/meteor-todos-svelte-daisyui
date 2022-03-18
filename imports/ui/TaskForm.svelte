@@ -11,9 +11,9 @@
   };
 </script>
 
-<form on:submit|preventDefault={handleSubmit}>
-  <div class="form-control text-center">
-    <div class="input-group max-w-sm md:max-w-lg">
+<form class="my-4 w-full" on:submit|preventDefault={handleSubmit}>
+  <div class="form-control w-full">
+    <div class="input-group md:input-group-lg w-full">
       <input
         type="text"
         name="text"
