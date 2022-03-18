@@ -12,16 +12,16 @@
 </script>
 
 <form on:submit|preventDefault={handleSubmit}>
-  <div class="form-control">
-    <div class="input-group input-group-lg max-w-lg">
+  <div class="form-control text-center">
+    <div class="input-group max-w-sm md:max-w-lg">
       <input
         type="text"
         name="text"
         placeholder="Type to add new tasks…"
-        class="input input-bordered input-lg"
+        class="input input-bordered md:input-lg"
         bind:value={newTask}
       />
-      <button class="btn btn-primary btn-square btn-lg" type="submit">
+      <button class="btn btn-primary btn-square md:btn-lg" type="submit">
         ➕
       </button>
     </div>

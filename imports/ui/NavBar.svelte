@@ -17,7 +17,7 @@
 <main>
   <nav class="navbar bg-base-100">
     <div class="flex-1">
-      <a class="btn btn-ghost normal-case text-3xl" href="/"
+      <a class="btn btn-ghost normal-case text-3xl md:text-5xl" href="/"
         >📝️ To Do List {pendingTasksTitle}</a
       >
     </div>

@@ -16,7 +16,7 @@
   <div class="form-control">
     <label class="label cursor-pointer" for={task._id}>
       <input
-        class="checkbox"
+        class="checkbox checkbox-accent"
         type="checkbox"
         id={task._id}
         readonly

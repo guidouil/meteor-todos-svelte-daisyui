@@ -1,8 +1,8 @@
 <script>
   import { Meteor } from "meteor/meteor";
 
-  let username = "";
-  let password = "";
+  let username = "meteorite";
+  let password = "password";
 
   const handleSubmit = () => {
     Meteor.loginWithPassword(username, password);
