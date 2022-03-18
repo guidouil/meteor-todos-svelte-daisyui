@@ -21,7 +21,7 @@
 
 <form on:submit|preventDefault={handleSubmit}>
   <div class="form-control">
-    <div class="input-group input-group-lg">
+    <div class="input-group input-group-lg max-w-lg">
       <input
         type="text"
         name="text"

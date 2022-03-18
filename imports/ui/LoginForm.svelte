@@ -16,7 +16,7 @@
     </label>
     <input
       type="text"
-      class="input input-bordered w-full max-w-lg"
+      class="input input-bordered input-lg w-full max-w-lg"
       placeholder="Username"
       name="username"
       id="username"
@@ -31,8 +31,8 @@
     </label>
     <input
       type="password"
-      class="input input-bordered w-full max-w-lg"
-      placeholder="password"
+      class="input input-bordered input-lg w-full max-w-lg"
+      placeholder="Password"
       name="password"
       id="password"
       required
@@ -42,6 +42,6 @@
 
   <br />
   <div class="text-center">
-    <button class="btn btn-primary btn-wide" type="submit">Log In</button>
+    <button class="btn btn-primary btn-block" type="submit">Log In</button>
   </div>
 </form>
