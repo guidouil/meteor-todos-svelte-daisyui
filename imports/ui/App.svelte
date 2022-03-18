@@ -1,10 +1,13 @@
 <script>
   import { Meteor } from "meteor/meteor";
-  import { TasksCollection } from "../api/TasksCollection";
+  import { TasksCollection } from "../db/TasksCollection";
   import NavBar from "./NavBar.svelte";
   import Task from "./Task.svelte";
   import TaskForm from "./TaskForm.svelte";
   import LoginForm from "./LoginForm.svelte";
+
+  let isLoading = true;
+  const handler = Meteor.subscribe("tasks");
 
   let user = null;
   let incompleteCount;
@@ -14,19 +17,21 @@
   const hideCompletedFilter = { isChecked: { $ne: true } };
   $m: {
     user = Meteor.user();
-    const userFilter = user ? { userId: user._id } : {};
-    const pendingOnlyFilter = { ...hideCompletedFilter, ...userFilter };
-    tasks = user
-      ? TasksCollection.find(hideCompleted ? pendingOnlyFilter : userFilter, {
-          sort: { createdAt: -1 },
-        }).fetch()
-      : [];
+    if (user) {
+      isLoading = !handler.ready();
 
-    incompleteCount = user
-      ? TasksCollection.find(pendingOnlyFilter).count()
-      : 0;
+      const userFilter = { userId: user._id };
+      const pendingOnlyFilter = { ...hideCompletedFilter, ...userFilter };
 
-    pendingTasksTitle = `${incompleteCount ? ` (${incompleteCount})` : ""}`;
+      tasks = TasksCollection.find(
+        hideCompleted ? pendingOnlyFilter : userFilter,
+        { sort: { createdAt: -1 } }
+      ).fetch();
+
+      incompleteCount = TasksCollection.find(pendingOnlyFilter).count();
+
+      pendingTasksTitle = `${incompleteCount ? ` (${incompleteCount})` : ""}`;
+    }
   }
 
   const setHideCompleted = (value) => {
@@ -37,8 +42,11 @@
 <main>
   <NavBar {pendingTasksTitle} {user} />
   <div class="max-w-lg mx-auto px-8">
+    {#if isLoading}
+      <div class="loading">loading...</div>
+    {/if}
     {#if user}
-      <TaskForm {user} />
+      <TaskForm />
       <p class="text-center">
         <button
           class="btn btn-default"

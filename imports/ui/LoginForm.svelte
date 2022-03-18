@@ -42,6 +42,8 @@
 
   <br />
   <div class="text-center">
-    <button class="btn btn-primary btn-block" type="submit">Log In</button>
+    <button class="btn btn-primary btn-block btn-lg" type="submit"
+      >Log In</button
+    >
   </div>
 </form>
