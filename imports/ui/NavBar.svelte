@@ -1,4 +1,5 @@
 <script>
+  import { Meteor } from "meteor/meteor";
   import { onMount } from "svelte";
   import { themeChange } from "theme-change";
 
@@ -7,14 +8,39 @@
     themeChange(false);
     // 👆 false parameter is required for svelte
   });
+
+  export let pendingTasksTitle;
+  export let user = null;
+  const logout = () => Meteor.logout();
 </script>
 
 <main>
   <nav class="navbar bg-base-100">
     <div class="flex-1">
-      <a class="btn btn-ghost normal-case text-4xl" href="/">📝️ To Do List</a>
+      <a class="btn btn-ghost normal-case text-3xl" href="/"
+        >📝️ To Do List {pendingTasksTitle}</a
+      >
     </div>
     <div class="flex-none">
+      {#if user}
+        <div class="tooltip tooltip-bottom" data-tip="Logout {user.username}">
+          <button class="btn btn-circle mx-4" on:click={logout}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              /></svg
+            >
+          </button>
+        </div>
+      {/if}
       <label class="swap swap-rotate p-0">
         <!-- this hidden checkbox controls the state -->
         <input

@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./client/**/*.{html,js}", "./imports/ui/*.svelte"],
+  content: ["./client/**/*.{html,js, css}", "./imports/ui/*.svelte"],
   theme: {
     extend: {},
   },

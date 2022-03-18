@@ -1,18 +1,19 @@
-module.exports = ctx => {
+module.exports = (ctx) => {
   // This flag is set when loading configuration by this package
   if (ctx.meteor) {
     const config = {
       plugins: {
         tailwindcss: {},
         autoprefixer: {},
+        "postcss-import": {},
       },
     };
 
-    if (ctx.env === 'production') {
+    if (ctx.env === "production") {
       // "autoprefixer" is reported to be slow,
       // so we use it only in production.
       config.plugins.autoprefixer = {
-        overrideBrowserslist: ['defaults'],
+        overrideBrowserslist: ["defaults"],
       };
     }
 

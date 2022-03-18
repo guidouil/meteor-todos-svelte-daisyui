@@ -1,6 +1,7 @@
 <script>
   import { TasksCollection } from "../api/TasksCollection";
 
+  export let user = null;
   let newTask = "";
 
   const handleSubmit = () => {
@@ -8,6 +9,7 @@
       // Insert a task into the collection
       TasksCollection.insert({
         text: newTask,
+        userId: user._id,
         createdAt: new Date(), // current time
       });
 
@@ -17,17 +19,19 @@
   };
 </script>
 
-<form class="form" on:submit|preventDefault={handleSubmit}>
+<form on:submit|preventDefault={handleSubmit}>
   <div class="form-control">
-    <div class="input-group input-group-lg w-full">
+    <div class="input-group input-group-lg">
       <input
         type="text"
         name="text"
         placeholder="Type to add new tasks…"
-        class="input input-bordered"
-        ind:value={newTask}
+        class="input input-bordered input-lg"
+        bind:value={newTask}
       />
-      <button class="btn btn-primary btn-square" type="submit"> ➕ </button>
+      <button class="btn btn-primary btn-square btn-lg" type="submit">
+        ➕
+      </button>
     </div>
   </div>
 </form>
