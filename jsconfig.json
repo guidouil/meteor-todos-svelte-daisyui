@@ -1,0 +1,82 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "allowJs": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "/*": [
+        "./*"
+      ],
+      "meteor/mongo": [
+        "/Users/gui/.meteor/packages/mongo/1.16.3/web.browser/local_collection_driver.js",
+        "/Users/gui/.meteor/packages/mongo/1.16.3/web.browser/collection.js",
+        "/Users/gui/.meteor/packages/mongo/1.16.3/web.browser/connection_options.js",
+        "/Users/gui/.meteor/packages/mongo/1.16.3/web.browser/doc_fetcher.js",
+        "/Users/gui/.meteor/packages/mongo/1.16.3/web.browser/mongo_driver.js",
+        "/Users/gui/.meteor/packages/mongo/1.16.3/web.browser/mongo_utils.js",
+        "/Users/gui/.meteor/packages/mongo/1.16.3/web.browser/observe_multiplex.js",
+        "/Users/gui/.meteor/packages/mongo/1.16.3/web.browser/oplog_observe_driver.js",
+        "/Users/gui/.meteor/packages/mongo/1.16.3/web.browser/oplog_tailing.js",
+        "/Users/gui/.meteor/packages/mongo/1.16.3/web.browser/oplog_v2_converter.js",
+        "/Users/gui/.meteor/packages/mongo/1.16.3/web.browser/polling_observe_driver.js",
+        "/Users/gui/.meteor/packages/mongo/1.16.3/web.browser/remote_collection_driver.js"
+      ],
+      "meteor/reactive-var": [
+        "/Users/gui/.meteor/packages/reactive-var/1.0.12/web.browser/reactive-var.js"
+      ],
+      "meteor/es5-shim": [
+        "/Users/gui/.meteor/packages/es5-shim/4.8.0/web.browser/client.js",
+        "/Users/gui/.meteor/packages/es5-shim/4.8.0/web.browser/console.js",
+        "/Users/gui/.meteor/packages/es5-shim/4.8.0/web.browser/cordova.js",
+        "/Users/gui/.meteor/packages/es5-shim/4.8.0/web.browser/export_globals.js",
+        "/Users/gui/.meteor/packages/es5-shim/4.8.0/web.browser/import_globals.js"
+      ],
+      "meteor/ecmascript": [
+        "/Users/gui/.meteor/packages/ecmascript/0.16.4/web.browser/ecmascript.js"
+      ],
+      "meteor/shell-server": [
+        "/Users/gui/.meteor/packages/shell-server/0.5.0/web.browser/main.js",
+        "/Users/gui/.meteor/packages/shell-server/0.5.0/web.browser/shell-server.js"
+      ],
+      "meteor/zodern:melte": [
+        "/Users/gui/.meteor/packages/zodern_melte/1.6.1/web.browser/tracker.js",
+        "/Users/gui/.meteor/packages/zodern_melte/1.6.1/web.browser/SvelteCompiler.js",
+        "/Users/gui/.meteor/packages/zodern_melte/1.6.1/web.browser/hmr-runtime.js",
+        "/Users/gui/.meteor/packages/zodern_melte/1.6.1/web.browser/plugin.js",
+        "/Users/gui/.meteor/packages/zodern_melte/1.6.1/web.browser/proxy-adapter.js"
+      ],
+      "meteor/rdb:svelte-meteor-data": [
+        "/Users/gui/.meteor/packages/rdb_svelte-meteor-data/1.0.0/web.browser/index.js",
+        "/Users/gui/.meteor/packages/rdb_svelte-meteor-data/1.0.0/web.browser/autorun.js",
+        "/Users/gui/.meteor/packages/rdb_svelte-meteor-data/1.0.0/web.browser/cursor.js",
+        "/Users/gui/.meteor/packages/rdb_svelte-meteor-data/1.0.0/web.browser/reactive-var.js",
+        "/Users/gui/.meteor/packages/rdb_svelte-meteor-data/1.0.0/web.browser/subscribe.js",
+        "/Users/gui/.meteor/packages/rdb_svelte-meteor-data/1.0.0/web.browser/use-session.js",
+        "/Users/gui/.meteor/packages/rdb_svelte-meteor-data/1.0.0/web.browser/use-tracker.js"
+      ],
+      "meteor/hot-module-replacement": [
+        "/Users/gui/.meteor/packages/hot-module-replacement/0.5.2/web.browser/hot-api.js",
+        "/Users/gui/.meteor/packages/hot-module-replacement/0.5.2/web.browser/client.js",
+        "/Users/gui/.meteor/packages/hot-module-replacement/0.5.2/web.browser/server.js"
+      ],
+      "meteor/dev-error-overlay": [
+        "/Users/gui/.meteor/packages/dev-error-overlay/0.1.1/web.browser/client.js"
+      ],
+      "meteor/accounts-password": [
+        "/Users/gui/.meteor/packages/accounts-password/2.3.3/web.browser/password_client.js",
+        "/Users/gui/.meteor/packages/accounts-password/2.3.3/web.browser/email_templates.js",
+        "/Users/gui/.meteor/packages/accounts-password/2.3.3/web.browser/password_server.js"
+      ]
+    }
+  },
+  "typeAcquisition": {
+    "include": [
+      "meteor"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    ".meteor"
+  ]
+}
