@@ -21,4 +21,4 @@ rdb:svelte-meteor-data  # Meteor package which allows us to consume Meteor's rea
 hot-module-replacement@0.5.2  # Update client in development without reloading the page
 dev-error-overlay@0.1.1
 juliancwirko:postcss
-accounts-password@2.3.2
+accounts-password@2.3.3
